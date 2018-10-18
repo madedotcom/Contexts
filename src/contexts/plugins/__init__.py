@@ -7,4 +7,4 @@ def cleverly_get_words(string):
         r'(?<=[A-Z])(?=[A-Z][a-z])',
         r'(?<=[A-Za-z])(?=[^A-Za-z])'
     ))
-    return regex.sub(' ', string).split(' ')
+    return [w for w in regex.sub(' ', string).split(' ') if w]
