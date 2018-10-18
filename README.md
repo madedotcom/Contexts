@@ -3,14 +3,13 @@ Contexts
 [![Build Status](https://travis-ci.org/madedotcom/Contexts.png?branch=master)](https://travis-ci.org/madedotcom/Contexts)
 [![Documentation Status](https://readthedocs.org/projects/contexts/badge/?version=v0.11.2)](https://readthedocs.org/projects/contexts/?badge=v0.11.2)
 [![Coverage Status](https://coveralls.io/repos/madedotcom/Contexts/badge.svg?branch=master&service=github)](https://coveralls.io/github/madedotcom/Contexts?branch=master)
-[![Requirements Status](https://requires.io/github/madedotcom/Contexts/requirements.svg?branch=master)](https://requires.io/github/madedotcom/Contexts/requirements/?branch=master)
 
 Dead simple _descriptive testing_ for Python. No custom decorators, no context managers,
 no `.feature` files, no fuss.
 
 -----------------------------
 
-Contexts is a 'Context-Specification'-style test framework for Python 3.3 and above, inspired by C#'s
+Contexts is a 'Context-Specification'-style test framework for Python 3.6 and above, inspired by C#'s
 [`Machine.Specifications`](https://github.com/machine/machine.specifications).
 It aims to be flexible and extensible, and is appropriate for unit, integration and acceptance testing. Read more at the [Huddle Dev Blog](http://tldr.huddle.com/blog/Write-Your-Tests-In-Another-Language/).
 
