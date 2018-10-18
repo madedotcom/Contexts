@@ -1,9 +1,9 @@
 Contexts
 ========
-[![Build Status](https://travis-ci.org/benjamin-hodgson/Contexts.png?branch=master)](https://travis-ci.org/benjamin-hodgson/Contexts)
+[![Build Status](https://travis-ci.org/madedotcom/Contexts.png?branch=master)](https://travis-ci.org/madedotcom/Contexts)
 [![Documentation Status](https://readthedocs.org/projects/contexts/badge/?version=v0.11.2)](https://readthedocs.org/projects/contexts/?badge=v0.11.2)
-[![Coverage Status](https://coveralls.io/repos/benjamin-hodgson/Contexts/badge.svg?branch=master&service=github)](https://coveralls.io/github/benjamin-hodgson/Contexts?branch=master)
-[![Requirements Status](https://requires.io/github/benjamin-hodgson/Contexts/requirements.svg?branch=master)](https://requires.io/github/benjamin-hodgson/Contexts/requirements/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/madedotcom/Contexts/badge.svg?branch=master&service=github)](https://coveralls.io/github/madedotcom/Contexts?branch=master)
+[![Requirements Status](https://requires.io/github/madedotcom/Contexts/requirements.svg?branch=master)](https://requires.io/github/madedotcom/Contexts/requirements/?branch=master)
 
 Dead simple _descriptive testing_ for Python. No custom decorators, no context managers,
 no `.feature` files, no fuss.
