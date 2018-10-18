@@ -18,13 +18,13 @@ matrix:
     env: TOX_ENV=docs
 
 install:
-- pip install tox
+  - pip install tox
 
 script:
-- tox -e $TOX_ENV
+  - tox -e $TOX_ENV
 
 before_cache:
-- rm -rf $HOME/.cache/pip/log
+  - rm -rf $HOME/.cache/pip/log
 
 cache:
   directories:
