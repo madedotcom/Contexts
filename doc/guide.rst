@@ -35,6 +35,8 @@ and any subdirectories (or packages).
   Contexts makes no promises about the order in which tests will be run.
 * ``--no-assert``: Disable :ref:`assertion rewriting <_assertion>` - don't try to add helpful messages to assertions made with
   the `assert` statement.
+* ``--xml``: Specify output file for a Jenkins-compatible XML test report
+* ``--filespec=<FILE>``: Path to a file which defines tests to run.
 
 
 .. _test-discovery:
@@ -259,6 +261,7 @@ run will be reported as a separate suite.
 Contexts reports failures to TeamCity along with any stack traces, and also captures and
 reports any activity on stdout and stderr.
 
+.. _keywords:
 List of keywords
 ================
 

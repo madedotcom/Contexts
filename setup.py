@@ -1,5 +1,3 @@
-import ez_setup
-ez_setup.use_setuptools()
 from setuptools import setup, find_packages
 
 
@@ -12,6 +10,7 @@ builtin_plugins = [
     'AssertionRewritingImporter = contexts.plugins.importing.assertion_rewriting:AssertionRewritingImporter',
     'DecoratorBasedIdentifier = contexts.plugins.identification.decorators:DecoratorBasedIdentifier',
     'NameBasedIdentifier = contexts.plugins.identification:NameBasedIdentifier',
+    'FileSpecIdentifier = contexts.plugins.identification.filespec:FileSpecIdentifier',
     'TeamCityReporter = contexts.plugins.reporting.teamcity:TeamCityReporter',
     'DotsReporter = contexts.plugins.reporting.cli:DotsReporter',
     'VerboseReporter = contexts.plugins.reporting.cli:VerboseReporter',
@@ -28,7 +27,7 @@ builtin_plugins = [
 
 setup(
     name="Contexts",
-    version="0.10.2",
+    version="0.12",
     author="Benjamin Hodgson",
     author_email="benjamin.hodgson@huddle.net",
     url="https://github.com/benjamin-hodgson/Contexts",
@@ -47,6 +46,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Intended Audience :: Information Technology",
