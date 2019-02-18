@@ -9,7 +9,7 @@ from .plugins.test_target_suppliers import ObjectSupplier
 __all__ = [
     'run', 'main', 'run_with_plugins',
     'catch', 'set_trace', 'time',
-    'context', 'spec', 'scenario', 'examples', 'setup', 'action', 'assertion', 'teardown'
+    'context', 'spec', 'scenario', 'method', 'examples', 'setup', 'action', 'assertion', 'teardown'
 ]
 
 
