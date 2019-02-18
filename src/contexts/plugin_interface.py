@@ -208,6 +208,7 @@ class PluginInterface(object):
         :param func: The unbound method (or bound classmethod) which the test runner wants to be identified
 
         This method should return one of:
+            * :const:`~contexts.plugin_interface.METHOD` - plugin wishes the method to not be treated as a test discovery method
             * :const:`~contexts.plugin_interface.EXAMPLES` - plugin wishes the method to be treated as an 'examples' method
             * :const:`~contexts.plugin_interface.SETUP` - plugin wishes the method to be treated as an 'establish' method
             * :const:`~contexts.plugin_interface.ACTION` - plugin wishes the method to be treated as a 'because'
@@ -270,6 +271,8 @@ TEST_FOLDER = type("_TestFolder", (), {})()
 TEST_FILE = type("_TestFile", (), {})()
 #: Returned by plugins to indicate that a class is a test class.
 CONTEXT = type("_Context", (), {})()
+#: Returned by plugins to indicate that a method is not a test discovery method.
+METHOD = type("_Methods", (), {})()
 #: Returned by plugins to indicate that a method is an Examples method.
 EXAMPLES = type("_Examples", (), {})()
 #: Returned by plugins to indicate that a method is a setup method.

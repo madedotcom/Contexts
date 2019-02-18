@@ -1,11 +1,14 @@
 import types
-from contexts.plugin_interface import CONTEXT, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+from contexts.plugin_interface import (
+    CONTEXT, METHOD, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+)
 from . import NameBasedIdentifier
 
 
 class DecoratorBasedIdentifier(object):
     decorated_items = {
         "contexts": set(),
+        "methods": set(),
         "examples": set(),
         "setups": set(),
         "actions": set(),
@@ -30,6 +33,8 @@ class DecoratorBasedIdentifier(object):
             # this is to make it work with classmethods (such as examples)
             method = method.__func__
 
+        if method in self.decorated_items["methods"]:
+            return METHOD
         if method in self.decorated_items["examples"]:
             return EXAMPLES
         if method in self.decorated_items["setups"]:
@@ -99,6 +104,15 @@ def examples(func):
     """
     assert_not_multiple_decorators(func, "examples")
     DecoratorBasedIdentifier.decorated_items["examples"].add(func)
+    return func
+
+
+def method(func):
+    """
+    Decorator. Marks a method as not a test discovery method.
+    """
+    assert_not_multiple_decorators(func, "methods")
+    DecoratorBasedIdentifier.decorated_items["methods"].add(func)
     return func
 
 

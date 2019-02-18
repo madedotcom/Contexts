@@ -2,7 +2,7 @@ import sys
 from . import core
 from .plugin_discovery import load_plugins
 from .tools import catch, set_trace, time
-from .plugins.identification.decorators import context, spec, scenario, examples, setup, action, assertion, teardown
+from .plugins.identification.decorators import context, spec, scenario, method, examples, setup, action, assertion, teardown
 from .plugins.test_target_suppliers import ObjectSupplier
 
 

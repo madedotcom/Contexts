@@ -1,6 +1,6 @@
-from contexts.plugin_interface import CONTEXT, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
-from contexts.plugins.identification.decorators import DecoratorBasedIdentifier, spec, context, examples, setup, action, assertion, teardown
-from contexts import catch
+from contexts.plugin_interface import CONTEXT, METHOD, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+from contexts.plugins.identification.decorators import DecoratorBasedIdentifier
+from contexts import catch, spec, context, method, examples, setup, action, assertion, teardown
 
 
 class WhenMarkingAClassAsASpec:
@@ -33,6 +33,23 @@ class WhenMarkingAClassAsAContext:
     @assertion
     def it_should_identify_it_as_a_context(self):
         assert self.result is CONTEXT
+
+
+class WhenMarkingAMethodAsMethods:
+    def context(self):
+        class C:
+            @method
+            def it_should_do_things(self):
+                pass
+        self.method = C.it_should_do_things
+        self.identifier = DecoratorBasedIdentifier()
+
+    def because_the_framework_asks_the_plugin_to_identify_the_method(self):
+        self.result = self.identifier.identify_method(self.method)
+
+    @assertion
+    def it_should_identify_it_as_examples(self):
+        assert self.result is METHOD
 
 
 class WhenMarkingAMethodAsExamples:
