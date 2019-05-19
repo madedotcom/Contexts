@@ -232,7 +232,7 @@ a setup method with the word 'it' in the name.
 Contexts provides a built-in plugin which defines a set of decorators for overriding the way an object is named:
 
 * ``@examples`` to mark examples methods
-* ``@method`` to mark methods that are not involved in test discovery
+* ``@ignored`` to mark methods that are not involved in test definition
 * ``@setup`` to mark setup methods
 * ``@action`` to mark action methods
 * ``@assertion`` to mark assertion methods

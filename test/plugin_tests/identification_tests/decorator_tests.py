@@ -1,6 +1,6 @@
-from contexts.plugin_interface import CONTEXT, METHOD, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+from contexts.plugin_interface import CONTEXT, IGNORED, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
 from contexts.plugins.identification.decorators import DecoratorBasedIdentifier
-from contexts import catch, spec, context, method, examples, setup, action, assertion, teardown
+from contexts import catch, spec, context, ignored, examples, setup, action, assertion, teardown
 
 
 class WhenMarkingAClassAsASpec:
@@ -38,7 +38,7 @@ class WhenMarkingAClassAsAContext:
 class WhenMarkingAMethodAsMethods:
     def context(self):
         class C:
-            @method
+            @ignored
             def it_should_do_things(self):
                 pass
         self.method = C.it_should_do_things
@@ -48,8 +48,8 @@ class WhenMarkingAMethodAsMethods:
         self.result = self.identifier.identify_method(self.method)
 
     @assertion
-    def it_should_identify_it_as_examples(self):
-        assert self.result is METHOD
+    def it_should_identify_it_as_ignored(self):
+        assert self.result is IGNORED
 
 
 class WhenMarkingAMethodAsExamples:
