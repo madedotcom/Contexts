@@ -1,11 +1,14 @@
 import types
-from contexts.plugin_interface import CONTEXT, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+from contexts.plugin_interface import (
+    CONTEXT, IGNORED, EXAMPLES, SETUP, ACTION, ASSERTION, TEARDOWN
+)
 from . import NameBasedIdentifier
 
 
 class DecoratorBasedIdentifier(object):
     decorated_items = {
         "contexts": set(),
+        "ignoreds": set(),
         "examples": set(),
         "setups": set(),
         "actions": set(),
@@ -30,6 +33,8 @@ class DecoratorBasedIdentifier(object):
             # this is to make it work with classmethods (such as examples)
             method = method.__func__
 
+        if method in self.decorated_items["ignoreds"]:
+            return IGNORED
         if method in self.decorated_items["examples"]:
             return EXAMPLES
         if method in self.decorated_items["setups"]:
@@ -99,6 +104,15 @@ def examples(func):
     """
     assert_not_multiple_decorators(func, "examples")
     DecoratorBasedIdentifier.decorated_items["examples"].add(func)
+    return func
+
+
+def ignored(func):
+    """
+    Decorator. Marks a method as ignored by Contexts.
+    """
+    assert_not_multiple_decorators(func, "ignoreds")
+    DecoratorBasedIdentifier.decorated_items["ignoreds"].add(func)
     return func
 
 
